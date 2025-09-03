@@ -10,8 +10,7 @@ This project demonstrates a simple **event-driven architecture** where logs are 
 ---
 
 ## 📑 Table of Contents
-- [About](#-about)  
-- [Project Structure](#-project-structure)  
+- [About](#-about)    
 - [Installation](#-installation)  
 - [Usage](#-usage)  
 - [Configuration](#-configuration)  
@@ -57,4 +56,15 @@ docker-compose exec app python simulate_requests.py
 
 docker-compose logs -f app
 4.watch consumer output
+
+###🔧 Configuration
+
+Environment variables can be added (for example, Kafka broker settings).
+Update docker-compose.yml or .env file (if you add one) to configure:
+
+Kafka broker URL
+
+Topic names
+
+Consumer group ID
 
