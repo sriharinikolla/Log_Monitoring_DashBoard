@@ -1,71 +1,97 @@
 # Log_Monitoring_DashBoard
-# 🌀 Kafka Log Processing App
 
-A containerized Python application for **producing, consuming, and simulating log data streams** using **Kafka**.  
-This project demonstrates a simple **event-driven architecture** where logs are produced, sent to Kafka, and consumed in real time.
+This project is a **containerized Kafka-based streaming application** built with Python. It simulates requests, produces logs, and consumes messages from Kafka topics, demonstrating a complete **producer-consumer workflow**.
 
 ---
 
+## 🚀 Features
+
+* Log producer for generating Kafka events
+* Kafka consumer for processing messages
+* Request simulation script for testing the pipeline
+* Dockerized environment with `docker-compose`
+* Modular design with separate producer, consumer, and app modules
 
 ---
 
-## 📑 Table of Contents
-- [About](#-about)    
-- [Installation](#-installation)  
-- [Usage](#-usage)  
-- [Configuration](#-configuration)   
+## 📂 Project Structure
+
+```
+cc/
+├── app.py               # Main application entry point
+├── log_producer.py      # Kafka producer for logs
+├── kafka_consumer.py    # Kafka consumer logic
+├── simulate_requests.py # Request simulation utility
+├── requirements.txt     # Python dependencies
+├── Dockerfile           # Docker image definition
+├── docker-compose.yml   # Multi-container orchestration
+```
 
 ---
 
-## 📖 About
-This project simulates a **real-time log processing pipeline** with **Kafka**.  
-- **Producer** sends log events to Kafka  
-- **Consumer** reads and processes events  
-- **Simulated requests** generate fake workloads for testing  
+## 🛠️ Technologies Used
 
-It’s a great starter for learning **Kafka + Python + Docker** in distributed systems.
+* **Python 3.8+**
+* **Apache Kafka** – Event streaming platform
+* **Docker & Docker Compose** – Containerization and orchestration
 
 ---
 
----
-
-## ⚙️ Installation
+## ⚡ Getting Started
 
 ### Prerequisites
-- [Docker](https://docs.docker.com/get-docker/) & [Docker Compose](https://docs.docker.com/compose/)  
-- Python 3.9+ (if running locally without Docker)
 
-### Clone Repository
-```bash
-git clone https://github.com/yourusername/cc.git
-cd cc
+* Docker & Docker Compose installed
+* Python 3.8+ (if running outside Docker)
+
+### Setup with Docker
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/cc.git
+   cd cc
+   ```
+
+2. Start the Kafka environment and app:
+
+   ```bash
+   docker-compose up --build
+   ```
+
+3. The producer and consumer services will start automatically.
+
+### Run Locally (Without Docker)
+
+1. Install dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Start Kafka locally (ZooKeeper + Kafka broker).
+
+3. Run the producer and consumer:
+
+   ```bash
+   python log_producer.py
+   python kafka_consumer.py
+   ```
+
+4. Simulate requests:
+
+   ```bash
+   python simulate_requests.py
+   ```
 
 ---
 
-## 🚀 Usage
+## 📖 Workflow
 
-### Run with Docker Compose
-```bash
-docker-compose up --build
-1.Starts Kafka + Zookeeper + App
-2.Logs will stream in real-time
-
-docker-compose exec app python simulate_requests.py
-3.simulates log requests
-
-docker-compose logs -f app
-4.watch consumer output
+1. `simulate_requests.py` generates mock requests.
+2. `log_producer.py` sends logs/messages to Kafka.
+3. `kafka_consumer.py` listens to the Kafka topic and processes the messages.
 
 ---
 
-##🔧 Configuration
-
-Environment variables can be added (for example, Kafka broker settings).
-Update docker-compose.yml or .env file (if you add one) to configure:
-
-Kafka broker URL
-
-Topic names
-
-Consumer group ID
 
