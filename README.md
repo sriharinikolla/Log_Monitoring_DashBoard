@@ -13,11 +13,7 @@ This project demonstrates a simple **event-driven architecture** where logs are 
 - [About](#-about)    
 - [Installation](#-installation)  
 - [Usage](#-usage)  
-- [Configuration](#-configuration)  
-- [Contributing](#-contributing)  
-- [Roadmap](#-roadmap)  
-- [License](#-license)  
-- [Contact](#-contact)  
+- [Configuration](#-configuration)   
 
 ---
 
@@ -43,6 +39,9 @@ It’s a great starter for learning **Kafka + Python + Docker** in distributed s
 ```bash
 git clone https://github.com/yourusername/cc.git
 cd cc
+
+---
+
 ## 🚀 Usage
 
 ### Run with Docker Compose
@@ -57,7 +56,9 @@ docker-compose exec app python simulate_requests.py
 docker-compose logs -f app
 4.watch consumer output
 
-###🔧 Configuration
+---
+
+##🔧 Configuration
 
 Environment variables can be added (for example, Kafka broker settings).
 Update docker-compose.yml or .env file (if you add one) to configure:
